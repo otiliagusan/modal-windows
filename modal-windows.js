@@ -1,5 +1,4 @@
-
-// targeting elements
+// Targeting elements
 const firstModalButton = document.querySelector('.first');
 const secondModalButton = document.querySelector('.second');
 const thirdModalButton = document.querySelector('.third');
@@ -12,19 +11,21 @@ const closeButton = document.querySelector('.icon');
 // Function to show the modal and apply blur
 function showModal() {
     modalContainer.classList.remove('hidden'); // Show the modal
-    content.classList.remove('hidden'); // Apply blur to background content
-}
-//function for closing the modal
-function closeModal() {
-    modalContainer.classList.add('hidden');
-    content.classList.remove('blur');
+    content.classList.add('blur'); // Apply blur effect to the background content
 }
 
-//event listeners for the buttons
+// Function to close the modal and remove blur
+function closeModal() {
+    modalContainer.classList.add('hidden'); // Hide the modal
+    content.classList.remove('blur'); // Remove blur effect from the background content
+}
+
+// Event listeners for opening the modal
 firstModalButton.addEventListener('click', showModal);
 secondModalButton.addEventListener('click', showModal);
 thirdModalButton.addEventListener('click', showModal);
+
+// Event listeners for closing the modal
 closeButton.addEventListener('click', closeModal);
 yesButton.addEventListener('click', closeModal);
 cancelButton.addEventListener('click', closeModal);
-
